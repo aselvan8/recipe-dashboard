@@ -14,13 +14,12 @@ client = pymongo.MongoClient(conn)
 db = client.recipeDB
 recipes = db.recipe
 
+
+
+#home pages
 @app.route("/")
 def index():
     return render_template("index.html")
-
-
-
-
 
 
 
@@ -31,30 +30,7 @@ def apipull(api_call):
     recipe_json = dumps(data)
 
     # render an index.html template and pass it the data you retrieved from the database
-    return recipe_json
-
-
-
-
-
-
-
-#
-@app.route("/recipe")
-def test():
-    #recipe_id = "5f661b49039ded9690d3fb6c"
-
-    #data = recipes.find_one()
-    
-
-    data = recipes.find_one({"_id" : ObjectId('5f661b49039ded9690d3fb6c')})
-    #data = recipes.find({"recipe.label" :{$regex: ".*Chicken.*"}})
-    print(type(data))
-
-    recipe_json = dumps(data)
-
-    # render an index.html template and pass it the data you retrieved from the database
-    return recipe_json
+    return render_template("index.html", recipe = data)
 
 
 
@@ -67,9 +43,24 @@ def load_recipe(recipe_id):
     print(data)
 
     # render an index.html template and pass it the data you retrieved from the database
-    return render_template("index2.html", recipe = data)
+    return render_template("recipe.html", recipe = data)
 
 
+# @app.route("/recipe")
+# def test():
+#     #recipe_id = "5f661b49039ded9690d3fb6c"
+
+#     #data = recipes.find_one()
+    
+
+#     data = recipes.find_one({"_id" : ObjectId('5f661b49039ded9690d3fb6c')})
+#     #data = recipes.find({"recipe.label" :{$regex: ".*Chicken.*"}})
+#     print(type(data))
+
+#     recipe_json = dumps(data)
+
+#     # render an index.html template and pass it the data you retrieved from the database
+#     return recipe_json
 
 
 
