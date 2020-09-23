@@ -1,18 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html>
 
-    <!-- Our CSS -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+<head>
+  <meta charset="utf-8">
+  <title>Recipe Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css"> 
+  <!-- either slate or spacelab -->
+
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script> 
 </head>
+
 <body>
-   
+    <nav class="navbar navbar-default" >
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html"> Plenty Of Dish
+            <img class="nav-chef" src="../static/images/chef.svg" width='40px'>
+          </a>
+        </div>
+      </div>
+    </nav>
+
     
 
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-3">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading" >Search</div>
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Select Protein</label>
+                        <select id = 'protein' placeholder = 'protein'>
+                          <option value="poultry">Poultry</option>
+                          <option value="beef">Beef</option>
+                          <option value="pork">Pork</option>
+                          <option value="fish">Fish</option>
+                          <option value="tofu">Tofu</option>
+                          <option value="none">None</option>
+                        </select>
 
-    <script src="./static/js/app.js"></script>
+                        <label for="dietary-preference">Dietary Preference</label>
+                        <div class = 'restriction'>
+                          <input class = 'dietary' type="checkbox" id="Vegetarian" unchecked value = 'vegetarian'>
+                          <label  for="Vegetarian">Vegetarian</label>
+                          <input class = 'dietary' type="checkbox" id="Vegan" unchecked value = 'vegan'>
+                          <label for="Vegan">Vegan</label>
+                          
+                          <br>
+                          
+                          <input class = 'dietary' type="checkbox" id="Keto-Friendly" unchecked value = 'keto-friendly'>
+                          <label for="Keto-Friendly">Keto-Friendly</label>
+                          <input class = 'dietary' type="checkbox" id="Gluten-Free" unchecked value = 'gluten-free'>
+                          <label for="Gluten-Free">Gluten-Free</label>
+                        </div>
+
+                        <label >Max Calories Per Serving</label>
+                        <div class="slidecontainer">
+                          <input type="range" min="1" max="2000" value="650" class="slider" >
+                        </div>
+                        <br>
+
+                        <label for="date">Ingredient Keyword</label>
+                        <input class="form-control" id="ingredient1" type="text" placeholder="ingredient">
+                        <!-- <br>
+                        <input class="form-control" id="ingredient2" type="text" placeholder="ingredient">
+                        <br>
+                        <input class="form-control" id="ingrendient3" type="text" placeholder="ingredient"> -->
+
+                        
+
+                      </li>
+                    </ul>
+                  </div>
+                  <button id="filter-btn" type="button" class="btn btn-default" >Search</button>
+                  <button id="clear-btn" type="button" class="btn btn-default">Clear Search</button>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="col-md-7">
+          <div id="table-area" class="">
+
+            <aside class="filters">
+              <div class="panel panel-default">
+                <div class="panel-heading">Visualization Dishboard</div>
+                <div id="report-panel">
+                  <div class="panel-body" id="visualization">
+                    <img src="https://i.imgur.com/ggQMO8z.png" alt="">
+                  </div>
+                </div>
+                </div>
+              </aside>
+
+          </div>
+        </div>
+          <div class="col-md-2">
+          
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading">Ingredients</div>
+              <div id="report-panel">
+                <div class="panel-body" id="recipe-summary"></div>
+              </div>
+              </div>
+            </aside>
+
+          </div>
+            
+         
+          
+
+        </div>
+        
+      </div>
+    </div>
+    <footer class="footer">
+      <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <!-- java script here -->
+  <script src = '../static/js/search.js'></script>
 </body>
+
 </html>

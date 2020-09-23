@@ -1,32 +1,33 @@
-var chooseprotein = d3.select("#protein");
-chooseprotein.on('change',function(){
-    var protein = chooseprotein.property("value")
-    console.log(protein)
-})
+d3.select(".form-group").on("change", function(){
+    
+    d3.event.preventDefault();
+    
+    var chooseprotein = d3.select("#protein").property("value");
+    console.log(chooseprotein);
 
-var vegetarianCheck = d3.select(".restriction").selectAll("#Vegetarian");
-var dietaryCheck = d3.select(".restriction");
-
-
-
-dietaryCheck.on('change',function() {
-    var checkboxes = dietaryCheck.selectAll(".dietary");
-    var dietaryArray = [];
-    checkboxes.each(function(){
+    dietaryArray = [];
+    dietaryCheck = d3.select(".restriction").selectAll(".dietary");
+    
+    dietaryCheck.each(function(){
         var thisBox = d3.select(this);
         if (thisBox.property("checked")) {
             dietaryArray.push(thisBox.property("value"));
         }
-    })
-
+    });
     console.log(dietaryArray)
+    
+    var calorieMax = d3.select(".slider").property('value');
+    console.log(calorieMax);
+    
+    var keyword = d3.select("#ingredient1").property("value");
+    console.log(keyword);
+    
+    var data = [{
+        "protein": protein,
+        "restrictions": dietaryArray,
+        "calories": calorieMax,
+        "keyword": keyword
+    }];
 
-})
-
-var calorieSlider = d3.select(".slider");
-console.log(calorieSlider.property('value'))
-
-calorieSlider.on("change", function(){
-    var calorieMax = calorieSlider.property('value');
-    console.log(calorieMax)
-})
+    console.log(data);
+});
