@@ -23,7 +23,7 @@ d3.select(".form-group").on("change", function(){
     console.log(keyword);
     
     var data = [{
-        "protein": protein,
+        "protein": chooseprotein,
         "restrictions": dietaryArray,
         "calories": calorieMax,
         "keyword": keyword
