@@ -1,33 +1,35 @@
+var params;
 d3.select(".form-group").on("change", function(){
     
     d3.event.preventDefault();
     
-    var chooseprotein = d3.select("#protein").property("value");
-    console.log(chooseprotein);
+    var diet = d3.select("#diet").property("value");
+    console.log(diet);
 
-    dietaryArray = [];
-    dietaryCheck = d3.select(".restriction").selectAll(".dietary");
+    healthArray = [];
+    healthCheck = d3.select(".restriction").selectAll(".health");
     
-    dietaryCheck.each(function(){
+    healthCheck.each(function(){
         var thisBox = d3.select(this);
         if (thisBox.property("checked")) {
-            dietaryArray.push(thisBox.property("value"));
+            healthArray.push(thisBox.property("value"));
         }
     });
-    console.log(dietaryArray)
+    console.log(healthArray)
     
-    var calorieMax = d3.select(".slider").property('value');
+    var calorieMax = d3.select(".slider").property("value");
     console.log(calorieMax);
     
-    var keyword = d3.select("#ingredient1").property("value");
-    console.log(keyword);
+    var query = d3.select("#query").property("value");
+    console.log(query);
     
-    var data = [{
-        "protein": chooseprotein,
-        "restrictions": dietaryArray,
+    params = {
+        "diet": diet,
+        "health": healthArray,
         "calories": calorieMax,
-        "keyword": keyword
-    }];
+        "query": query
+    };
 
-    console.log(data);
+    
 });
+console.log(params);

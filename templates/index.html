@@ -9,7 +9,7 @@
   <!-- either slate or spacelab -->
 
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="../static/css/style.css">
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script> 
 </head>
@@ -38,46 +38,56 @@
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Select Protein</label>
-                        <select id = 'protein' placeholder = 'protein'>
-                          <option value="poultry">Poultry</option>
-                          <option value="beef">Beef</option>
-                          <option value="pork">Pork</option>
-                          <option value="fish">Fish</option>
-                          <option value="tofu">Tofu</option>
-                          <option value="none">None</option>
+                        <label for="diet">Select Diet Type</label>
+                        <select id = 'diet' placeholder = 'diet'>
+                          <option value="balanced">Balanced</option>
+                          <option value="high-fiber">High-Fiber</option>
+                          <option value="high-protein">High-Protein</option>
+                          <option value="low-carb">Low-Carb</option>
+                          <option value="low-fat">Low-Fat</option>
+                          <option value="low-sodium	">Low-Sodium</option>
                         </select>
 
-                        <label for="dietary-preference">Dietary Preference</label>
-                        <div class = 'restriction'>
-                          <input class = 'dietary' type="checkbox" id="Vegetarian" unchecked value = 'vegetarian'>
-                          <label  for="Vegetarian">Vegetarian</label>
-                          <input class = 'dietary' type="checkbox" id="Vegan" unchecked value = 'vegan'>
-                          <label for="Vegan">Vegan</label>
+                        <br>
+
+                        <label for="health-restriction">Health Restriction(s)</label>
+                        <div class = "restriction">
+                          <input class = "health" type="checkbox" id="peanut-free" unchecked value = 'peanut-free'>
+                          <label  for="peanut-free">Peanut-Free</label>
+                          <input class = "health" type="checkbox" id="shellfish-free" unchecked value = 'shellfish-free'>
+                          <label for="shellfish-free">Shellfish-Free</label>
                           
                           <br>
                           
-                          <input class = 'dietary' type="checkbox" id="Keto-Friendly" unchecked value = 'keto-friendly'>
-                          <label for="Keto-Friendly">Keto-Friendly</label>
-                          <input class = 'dietary' type="checkbox" id="Gluten-Free" unchecked value = 'gluten-free'>
-                          <label for="Gluten-Free">Gluten-Free</label>
+                          <input class = "health" type="checkbox" id="vegan" unchecked value = 'vegan'>
+                          <label for="vegan">Vegan</label>
+                          <input class = "health" type="checkbox" id="gluten-free" unchecked value = 'gluten-free'>
+                          <label for="gluten-free">Gluten-Free</label>
+
+                          <br>
+
+                          <input class = "health" type="checkbox" id="keto-friendly" unchecked value = 'keto-friendly'>
+                          <label for="keto-friendly">Keto-Friendly</label>
+                          <input class = "health" type="checkbox" id="vegetarian" unchecked value = 'vegetarian'>
+                          <label for="vegetarian">Vegetarian</label>
+
+                          <br>
+
+                          <input class = "health" type="checkbox" id="dairy-free" unchecked value = 'dairy-free'>
+                          <label for="dairy-free">Dairy-Free</label>
+                          <input class = "health" type="checkbox" id="pecatarian" unchecked value = 'pecatarian'>
+                          <label for="pecatarian">Pecatarian</label>
                         </div>
 
                         <label >Max Calories Per Serving</label>
                         <div class="slidecontainer">
-                          <input type="range" min="1" max="2000" value="650" class="slider" >
+                          <input type="range" min="1" max="3000" value="1000" class="slider" >
                         </div>
                         <br>
 
-                        <label for="date">Ingredient Keyword</label>
-                        <input class="form-control" id="ingredient1" type="text" placeholder="ingredient">
-                        <!-- <br>
-                        <input class="form-control" id="ingredient2" type="text" placeholder="ingredient">
-                        <br>
-                        <input class="form-control" id="ingrendient3" type="text" placeholder="ingredient"> -->
-
-                        
-
+                        <label for="query">Main Ingredient</label>
+                        <input class="form-control" id="query" type="text" placeholder="chicken">
+                      
                       </li>
                     </ul>
                   </div>
@@ -96,7 +106,7 @@
                 <div class="panel-heading">Visualization Dishboard</div>
                 <div id="report-panel">
                   <div class="panel-body" id="visualization">
-                    <img src="https://i.imgur.com/ggQMO8z.png" alt="">
+                    <img src="https://i.imgur.com/ggQMO8z.png" alt="img">
                   </div>
                 </div>
                 </div>
