@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-
+​
 <head>
   <meta charset="utf-8">
   <title>Recipe Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css"> 
   <!-- either slate or spacelab -->
-
+​
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <link rel="stylesheet" href="../static/css/style.css">
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script> 
 </head>
-
+​
 <body>
     <nav class="navbar navbar-default" >
       <div class="container-fluid">
@@ -24,9 +24,9 @@
         </div>
       </div>
     </nav>
-
+​
     
-
+​
     <div class="container">
       <div class="row margin-top-50">
         <div class="col-md-3">
@@ -47,9 +47,9 @@
                           <option value="low-fat">Low-Fat</option>
                           <option value="low-sodium	">Low-Sodium</option>
                         </select>
-
+​
                         <br>
-
+​
                         <label for="health-restriction">Health Restriction(s)</label>
                         <div class = "restriction">
                           <input class = "health" type="checkbox" id="peanut-free" unchecked value = 'peanut-free'>
@@ -63,28 +63,28 @@
                           <label for="vegan">Vegan</label>
                           <input class = "health" type="checkbox" id="gluten-free" unchecked value = 'gluten-free'>
                           <label for="gluten-free">Gluten-Free</label>
-
+​
                           <br>
-
+​
                           <input class = "health" type="checkbox" id="keto-friendly" unchecked value = 'keto-friendly'>
                           <label for="keto-friendly">Keto-Friendly</label>
                           <input class = "health" type="checkbox" id="vegetarian" unchecked value = 'vegetarian'>
                           <label for="vegetarian">Vegetarian</label>
-
+​
                           <br>
-
+​
                           <input class = "health" type="checkbox" id="dairy-free" unchecked value = 'dairy-free'>
                           <label for="dairy-free">Dairy-Free</label>
                           <input class = "health" type="checkbox" id="pecatarian" unchecked value = 'pecatarian'>
                           <label for="pecatarian">Pecatarian</label>
                         </div>
-
+​
                         <label >Max Calories Per Serving</label>
                         <div class="slidecontainer">
                           <input type="range" min="1" max="3000" value="1000" class="slider" >
                         </div>
                         <br>
-
+​
                         <label for="query">Main Ingredient</label>
                         <input class="form-control" id="query" type="text" placeholder="chicken">
                       
@@ -100,7 +100,7 @@
         </div>
         <div class="col-md-7">
           <div id="table-area" class="">
-
+​
             <aside class="filters">
               <div class="panel panel-default">
                 <div class="panel-heading">Visualization Dishboard</div>
@@ -111,7 +111,7 @@
                 </div>
                 </div>
               </aside>
-
+​
           </div>
         </div>
           <div class="col-md-2">
@@ -124,24 +124,24 @@
               </div>
               </div>
             </aside>
-
+​
           </div>
             
          
-          
-
+          <a href="/final_recipe/5f661b49039ded9690d3fb6c">recipe1</a>
+​
         </div>
         
       </div>
     </div>
     <footer class="footer">
       <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-
+​
     </footer>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
   <!-- java script here -->
   <script src = '../static/js/search.js'></script>
 </body>
-
+​
 </html>
