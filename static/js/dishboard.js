@@ -29,50 +29,31 @@ d3.json(sample, function(data){
 
 
     var recipe = data[0].recipe;
-    var prepTime = recipe.totalTime;
-    var ingredients = recipe.ingredients;
-    var dietLabels = recipe.dietLabels;
-    var healthLabels = recipe.healthLabels;
-    var nutrients = recipe.totalNutrients;
-    var kcal = nutrients.ENERC_KCAL.quantity;
-    var servings = recipe.yield;
+ 
 
-    
+    console.log(recipe)
 
-    // console.log(recipe)
-    // console.log(prepTime)
-    // console.log(ingredients)
-    // console.log(dietLabels)
-    // console.log(servings)
-    // console.log(kcal)
-    // console.log(healthLabels)
-    
-
-
-      // creates scaling functions for x and y
-    var yy = data.map(function(data){return data.recipe.yield});
-    var xx = data.map(function(data){return data.recipe.totalNutrients.ENERC_KCAL.quantity});
-
+  
     var plotData  = data.map(function(dataPoint) {
         return {
-            x: dataPoint.recipe.yield,
-            y: dataPoint.recipe.totalNutrients.ENERC_KCAL.quantity
+            serving: dataPoint.recipe.yield,
+            cal: dataPoint.recipe.totalNutrients.ENERC_KCAL.quantity,
+            time: dataPoint.recipe.totalTime,
+            sugar: dataPoint.recipe.totalNutrients.SUGAR.quantity,
+            fat: dataPoint.recipe.totalNutrients.FAT.quantity
         }
     });
 
     console.log(plotData)
 
-    var plotMe = {x:xx, y:yy};
-    console.log(plotMe)
 
-    // console.log([0, d3.max(plotData, d=> yLinearScale(d.y))])
 
     var xLinearScale = d3.scaleLinear()
-    .domain([0, d3.max(plotData,d => d.x) ])
+    .domain([0, d3.max(plotData,d => d.serving) ])
     .range([0, width]);
 
     var yLinearScale = d3.scaleLinear()
-    .domain([0, d3.max(plotData, d=> d.y)])
+    .domain([0, d3.max(plotData, d=> d.cal)])
     .range([height, 0]);
 
     // appends bottom axis  
@@ -92,17 +73,13 @@ d3.json(sample, function(data){
     .data(plotData)
     .enter()
     .append("circle")
-    .attr("cx", d => xLinearScale(d.x))
-    .attr("cy", d => yLinearScale(d.y))
-    .attr("r", d => yLinearScale(d.y)/50)
-
+    .attr("cx", d => xLinearScale(d.serving))
+    .attr("cy", d => yLinearScale(d.cal))
+    .attr("r", d => yLinearScale(d.cal)/25)
+    .attr("fill", "green")
+    .attr("opacity", ".5");
     ;
 
-   
-    // for (var i = 0; i < plotMe.x; i++) {
-    //     var cx = ;
-    //     chartGroup.append("circle").attr("cx",)
-    // }
 
 
     chartGroup.append("text")

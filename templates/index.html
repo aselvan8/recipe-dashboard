@@ -86,7 +86,7 @@
                         <br>
 
                         <label for="query">Main Ingredient</label>
-                        <input class="form-control" id="query" type="text" placeholder="chicken">
+                        <input class="form-control" id="query" type="text" value = "chicken" placeholder="chicken">
                       
                       </li>
                     </ul>
@@ -103,7 +103,23 @@
 
             <aside class="filters">
               <div class="panel panel-default">
-                <div class="panel-heading">Visualization Dishboard</div>
+                <div class="panel-heading">Visualization Dishboard
+                  <select name="graphs" id="x">
+                    <option value="serving">Servings</option>
+                    <option value="cal">Total Calories</option>
+                    <option value="time">Prep. Time</option>
+                    <option value="sugar">Sugar Content</option>
+                    <option value="fat">Fat Content</option>
+                  </select>
+                  <select name="graphs" id="y">
+                    <option value="serving">Servings</option>
+                    <option value="cal">Total Calories</option>
+                    <option value="time">Prep. Time</option>
+                    <option value="sugar">Sugar Content</option>
+                    <option value="fat">Fat Content</option>
+                  </select>
+
+                </div>
                 <div id="report-panel">
                   <div class="panel-body" id="dishboard">
 
