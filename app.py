@@ -3,19 +3,17 @@ import pymongo
 import json
 from bson.json_util import dumps
 from bson.objectid import ObjectId
-​
+
 app = Flask(__name__)
-​
+
 # setup mongo connection
 conn = "mongodb://localhost:27017"
 client = pymongo.MongoClient(conn)
-​
+
 # connect to mongo db and collection
 db = client.recipeDB
 recipes = db.recipe
-​
-​
-​
+
 # home pages
 
 
@@ -23,10 +21,6 @@ recipes = db.recipe
 def index():
     return render_template("index.html")
 
-
-​
-
-​
 # route to load the last page based on the recipe id extracted from clicking an image
 
 
@@ -41,9 +35,6 @@ def load_recipe(recipe_id):
     return render_template("recipe.html", recipe=data)
 
 
-​
-
-
 @app.route("/recipe", methods=['GET', 'POST'])
 def test():
     if request.method == 'POST':
@@ -55,7 +46,3 @@ def test():
 
 if __name__ == "__main__":
     app.run(debug=True)
-​
-​
-​
-​
