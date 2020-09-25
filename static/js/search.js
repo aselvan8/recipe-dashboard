@@ -22,12 +22,21 @@ d3.select(".form-group").on("change", function(){
     var keyword = d3.select("#ingredient1").property("value");
     console.log(keyword);
     
-    var data = [{
+    var searchParameters = [{
         "protein": chooseprotein,
         "restrictions": dietaryArray,
         "calories": calorieMax,
         "keyword": keyword
     }];
 
-    console.log(data);
+    console.log(searchParameters);
+
+    d3.json(`/api_call/${searchParameters}`).then(function(data){
+        console.log(data)
+
+        
+
+    });
+
+
 });
