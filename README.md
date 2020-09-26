@@ -8,6 +8,11 @@ This dashboard uses Python Flask–powered RESTful API, HTML/CSS, JavaScript, an
 The javascript libraries used in the application include d3 and chart.js.
 ### Folder Structure
 Because this application uses Flask, the html files are stored in the templates folder. The css, images, and js files are stored under the static folder. 
+## How to Run
+  * Step 1: Activate our PythonData environment (python=3.6) 
+    * `source activate PythonData` or `conda activate PythonData` in git bash or terminal
+  * Step 2: Create **config.py** (in the same location as app.py) with `api_id` & `api_key` for Edamam API
+  * Step 3: In **git bash** or **terminal** run `python app.py` (windows) or `python3 app.py` (mac)
 ## Web-based Dashboard
 ### Landing Page
 The landing page of our web application, Plenty of Dish, includes a search form that allows users to search through Edamam's recipes based on criteria such as diet, health labels, calories, and ingredients. Upon hiting the search button, users will be presented with a scatterplot to assist them with deciding what recipe they want to select (e.g. prep time vs. calories). By clicking on a data point on the scatterplot, the user is then taken to a new page that displays information about their chosen recipe.
