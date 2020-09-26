@@ -13,11 +13,6 @@ Because this application uses Flask, the html files are stored in the templates 
 The landing page of our web application, Plenty of Dish, includes a search form that allows users to search through Edamam's recipes based on criteria such as diet, health labels, calories, and ingredients. Upon hiting the search button, users will be presented with a scatterplot to assist them with deciding what recipe they want to select (e.g. prep time vs. calories). By clicking on a data point on the scatterplot, the user is then taken to a new page that displays information about their chosen recipe.
 ### Recipe Page
 The recipe page displays the user's chosen recipe based on their selection on the landing page. This page provides information of the recipe, including meal type, cuisine type, and nutrition informaiton such as calories and amount of nutrients (e.g. fat, carbs, protein). There is also a link to the orginal source of the recipe (with full list of ingredients and detailed instructions).  
-<<<<<<< HEAD
-
+![dashboard_gif](recipe.gif)
 ## Creators
 Miguel Flores, Kyle Ledesma, Hannah Wang, Tameka Kuar
-=======
-![dashboard_screenshot](Images/example.png)
-## Creators
->>>>>>> 12ddea49448434e4d9401cfda1cee51092b9c251
