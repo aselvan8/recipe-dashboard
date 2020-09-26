@@ -3,7 +3,8 @@
     height: 250px;}
 
 body{
-    background-image: url(https://www.bakingbusiness.com/ext/resources/2019/1/01142019/Ingredients2019.jpg?1547588432);
+    background-image: url('https://images.unsplash.com/photo-1495195134817-aeb325a55b65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80');
+    /* background-image: url(https://www.bakingbusiness.com/ext/resources/2019/1/01142019/Ingredients2019.jpg?1547588432); */
     /* background-image: url('https://media.istockphoto.com/photos/wood-table-top-on-blur-kitchen-counter-background-picture-id1162090981?k=6&m=1162090981&s=612x612&w=0&h=IDvO9ulJYYEQYFe-CXvgpa-2ZQdIzMwooyMixjauATc='); */
     /* background-image: url('https://previews.123rf.com/images/manyapeace45/manyapeace451711/manyapeace45171100059/88973995-food-frame-and-barbecue-dishes-the-concept-of-eating-outdoors-outside-the-home-summer-time-.jpg'); */
     background-color: black;
@@ -18,7 +19,7 @@ body{
     }
     
 .panel {
-    background-color:  rgba(58, 1, 13, .45);
+    background-color: #c3b091;
 }
 
 .nav-chef {
@@ -26,17 +27,24 @@ body{
     bottom: 9px;
     left: 140px;
     width: 35px;
-    color:white;
+    color:white !important;
   }
 
 #diet {
-    color: black;
+    color: black !important;
     font-size: 13px;
 }
 
 .filter {
-    background-color:  rgba(58, 1, 13, 0.493);
+    background-color:  rgba(58, 1, 13, 0.6);
     color: white;
     font-family: sans-serif;
 }
 
+.ingredient {font-size: small;}
+
+.pop-up{
+    background-color: rgba(231, 204, 164, 0.9);
+    /* background-color:#c3b091; */
+    padding:3px;
+}

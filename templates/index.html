@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Recipe Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/spacelab/bootstrap.min.css"> 
   <!-- either slate or spacelab -->
 
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
@@ -75,11 +75,11 @@
 
                           <input class = "health" type="checkbox" id="dairy-free" unchecked value = 'dairy-free'>
                           <label for="dairy-free">Dairy-Free</label>
-                          <input class = "health" type="checkbox" id="pecatarian" unchecked value = 'pecatarian'>
-                          <label for="pecatarian">Pecatarian</label>
+                          <input class = "health" type="checkbox" id="pescatarian" unchecked value = 'pescatarian'>
+                          <label for="pescatarian">Pescatarian</label>
                         </div>
 
-                        <label >Max Calories Per Serving</label>
+                        <label >Max Calories</label>
                         <div class="slidecontainer">
                           <input type="range" min="1" max="3000" value="1000" class="slider" >
                         </div>
@@ -92,7 +92,7 @@
                     </ul>
                   </div>
                   <button id="filter-btn" type="button" class="btn btn-default" >Search</button>
-                  <button id="clear-btn" type="button" class="btn btn-default">Clear Search</button>
+
                 </form>
               </div>
             </div>
@@ -104,20 +104,46 @@
             <aside class="filters">
               <div class="panel panel-default">
                 <div class="panel-heading">Visualization Dishboard
-                  <select name="graphs" id="x">
+                  <br>
+                  <label for="x">x:</label>
+                  <select class="graphs" id="x" >
                     <option value="serving">Servings</option>
                     <option value="cal">Total Calories</option>
+                    <option value="calperserving">Calories per Serving</option>
                     <option value="time">Prep. Time</option>
                     <option value="sugar">Sugar Content</option>
+                    <option value="glycemic">Glycemic Index</option>
                     <option value="fat">Fat Content</option>
                   </select>
-                  <select name="graphs" id="y">
+                  <br>
+                  <label for="y">y:</label>
+                  <select class="graphs" id="y">
                     <option value="serving">Servings</option>
                     <option value="cal">Total Calories</option>
+                    <option value="calperserving">Calories per Serving</option>
                     <option value="time">Prep. Time</option>
                     <option value="sugar">Sugar Content</option>
+                    <option value="glycemic">Glycemic Index</option>
                     <option value="fat">Fat Content</option>
                   </select>
+                  <br>
+                  <label for="size">highlight:</label>
+                  <select class="graphs" id="size" placeholder="Test">
+                    <option value="serving">Servings</option>
+                    <option value="cal">Total Calories</option>
+                    <option value="calperserving">Calories per Serving</option>
+                    <option value="time">Prep. Time</option>
+                    <option value="sugar">Sugar Content</option>
+                    <option value="glycemic">Glycemic Index</option>
+                    <option value="fat">Fat Content</option>
+                  </select>
+                  <!-- <label for="find">low/high</label> -->
+                  <select class="graphs" id="lowhigh" placeholder="Test">
+                    <option value="lowsearch">Find Low</option>
+                    <option value="highsearch">Find High</option>
+                  </select>
+                    <!-- <input type="range" min="1" max="50" value="50" class="slider graphs" id="scaler"> -->
+                 
 
                 </div>
                 <div id="report-panel">
@@ -159,6 +185,8 @@
   <!-- java script here -->
   <script src = '../static/js/search.js'></script>
   <script src = '../static/js/dishboard.js'></script>
+  <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
 
 </body>
 
