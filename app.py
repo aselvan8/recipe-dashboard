@@ -6,16 +6,20 @@ from bson.objectid import ObjectId
 import requests
 import config 
 app = Flask(__name__)
+
 # setup mongo connection
 conn = "mongodb://localhost:27017"
 client = pymongo.MongoClient(conn)
+
 # connect to mongo db and collection
 db = client.recipeDB
 recipes = db.recipe
+
 #home pages
 @app.route("/")
 def index():
     return render_template("index.html")
+
 #API Call route
 #This endpoint triggers wiping the recipe DB and sending an API call to populate the DB based on the user's search
 @app.route("/api/home/api_call", methods=['GET', 'POST'])
@@ -23,15 +27,12 @@ def apipull():
     if request.method == 'POST':   
         search_param = request.json
         print(search_param)
+
         # Establish API Call URL
         # drop previously generated collection
         recipes.drop()
-        # search_param = {
-        #         "query": "chicken",
-        #         "diet": "low-carb",
-        #         "health": ["peanut-free", "vegetarian"],
-        #         "calories": "100-300"
-        #         } 
+        
+        # Constructing Query
         url = "https://api.edamam.com/search?"
         query = f"q={search_param['query']}" #this is where keyword search will go
         api_key = f"&app_id={config.api_id}&app_key={config.api_key}"
@@ -65,16 +66,17 @@ def apipull():
         return recipe_json
         # # render an index.html template and pass it the data you retrieved from the database
         # return render_template("index.html", recipe = data)
+
 #route to load the last page based on the recipe id extracted from clicking an image
 @app.route("/final_recipe/<recipe_id>")
 def load_recipe(recipe_id):
     data = recipes.find_one({"_id" : ObjectId(recipe_id)})
-    #data = recipes.find_one({"recipe.recipe.label" : ObjectId(recipe_name)})
-    #print(recipe_id)
-    #print(data)
+    
+    
     # render an index.html template and pass it the data you retrieved from the database
     return render_template("index2.html", recipe = data)
 #brings the final recipe data to JS
+
 @app.route("/api/final_recipe/<recipe_id>")
 def load_recipe2(recipe_id):
     print(recipe_id)

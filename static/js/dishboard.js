@@ -125,7 +125,7 @@ function dishboard(data){
                 rsum = rsum + n;
                 rcounter = rcounter+c
             } // loop 1 close
-            var sAvg = rsum/plotData.length;
+            var sAvg = rsum/rcounter;
             console.log(sAvg)
             // attempting dynamic plot
     
@@ -175,7 +175,7 @@ function dishboard(data){
             if (r < 1.5 * scale) { r = 1.5 * scale}
     
             if (o > 6 * scale) { o = 6 * scale}
-            if (o < 1.5 * scale) { o = 1.5 * scale}
+            if (o < 2 * scale) { o = 2 * scale}
     
             // console.log(r)
             return {r:r,o:o}
@@ -219,7 +219,7 @@ function dishboard(data){
         var toolTip = d3.tip()
         .attr("class", "d3-tip")
         .html(function(plotData, index) {
-            return (`<div class = "pop-up">
+            return (`<div class = "pop-up" width="105px" height="130px">
             ${plotData.name} <br> ${axisVar(varS)}:${Math.round(plotData.s)} <br> <img width="100px" height="100px" src="${plotData.image}" alt="">
             </div>`);
         });

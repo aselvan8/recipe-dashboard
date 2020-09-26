@@ -1,31 +1,3 @@
-// experimental cluter zone START
-// var svgWidth = 650;
-// var svgHeight = 400;
-
-// var margin = {
-//   top: 10,
-//   right: 30,
-//   bottom: 50,
-//   left: 90
-// };
-
-// // appends svg to correct div
-// var svg = d3.select("#dishboard")
-//   .append("svg")
-//   .attr("width", svgWidth)
-//   .attr("height", svgHeight);
-
-// // appends group to build plot object
-// var chartGroup = svg.append("g")
-//   .attr("transform", `translate(${margin.left}, ${margin.top})`);
-
-
-// var width = svgWidth - margin.left - margin.right;
-// var height = svgHeight - margin.top - margin.bottom;
-
-// experimental cluter zone END
-
-
 
 
 var search_params;
