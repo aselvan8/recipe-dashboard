@@ -19,5 +19,4 @@ The recipe page displays the user's chosen recipe based on their selection on th
 Miguel Flores, Kyle Ledesma, Hannah Wang, Tameka Kuar
 =======
 ![dashboard_screenshot](Images/example.png)
-## Creators
->>>>>>> 12ddea49448434e4d9401cfda1cee51092b9c251
+
